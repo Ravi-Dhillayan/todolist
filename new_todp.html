@@ -62,10 +62,10 @@
             const li = document.getElementById("li")
         })
         function saveData() {
-            localStorage.setItem('data', ul.innerHTML);
+            localStorage.setItem('datasave', ul.innerHTML);
         }
         function showData() {
-            ul.innerHTML = localStorage.getItem('data');
+            ul.innerHTML = localStorage.getItem('datasave');
         }
         showData();
     </script>
