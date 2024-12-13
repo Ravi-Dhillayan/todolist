@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new_Todo</title>
+    <link rel="stylesheet" href="new_To_DoList.css">
+</head>
+
+<body>
+    <div class="TodoContainer">
+        <div>
+            <h1>To-Do List</h1>
+            <div id="Todo">
+                <input type="text" name="Add" id="Idinput" placeholder="Add Your text">
+                <button id="submit" type="button">Add</button>
+                <ul id="ul">
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", function (e) {
+            let input = document.getElementById("Idinput").value;
+            if (input == "") {
+                alert("Please Entered value : ")
+            }
+            else {
+                const ul = document.getElementById("ul")
+                const li = document.createElement("li")
+                li.innerHTML = input;
+                ul.appendChild(li)
+                const span = document.createElement("span")
+
+                span.innerHTML = "x"
+                li.appendChild(span)
+                // input = "";
+                document.getElementById("Idinput").value="";
+                saveData();
+
+            }
+        })
+
+        const ul = document.getElementById("ul")
+        ul.addEventListener("click", function (e) {
+            console.log(e.target.tagName);
+            
+            if (e.target.tagName === "LI") {
+                e.target.classList.toggle("checked");
+                saveData();
+            }
+            else if (e.target.tagName === "SPAN") {
+                e.target.parentNode.remove();
+                saveData();
+                checked
+            }
+            const li = document.getElementById("li")
+        })
+        function saveData() {
+            localStorage.setItem('data', ul.innerHTML);
+        }
+        function showData() {
+            ul.innerHTML = localStorage.getItem('data');
+        }
+        showData();
+    </script>
+
+</body>
+
+</html>

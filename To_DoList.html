@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_DoList</title>
+    <link rel="stylesheet" href="To_DoList.css">
+</head>
+
+<body>
+        <div id="Todo">
+            <h1>To-Do List</h1>
+
+            <input type="text" name="Add" id="Idinput" placeholder="Add Your text">
+            <button id="submit" type="button">Add</button>
+            <div>
+                <ul id="ul">
+                
+                </ul>
+            </div>
+    </div>
+    <script>
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", function (e) {
+             
+            const input = document.getElementById("Idinput").value;
+        //    alert(input)
+            // input.innerHTML+="hello";
+            const ul =document.getElementById("ul")
+            const li=document.createElement("li")
+            const text=document.createElement("span")
+              text.innerHTML=input;
+            const deletB=document.createElement("button")
+               const d=deletB.id="Id_delete";
+            //   deletB.innerHTML+="d"
+               deletB.textContent="X";
+            //   li.textContent=input;
+              li.appendChild(text);
+              li.appendChild(deletB)
+              ul.appendChild(li);
+            // alert(li)
+            document.getElementById("Id_delete").addEventListener("click",function(e){
+                const rem = e.target.parentNode.querySelector("span").textContent; 
+                alert(rem);
+                 const new_rem=rem.getElementById("Id_delete").value;
+                 if (rem == new_rem) {
+           let Outdelet = e.target.parentNode;
+          Outdelet.remove(); 
+    }
+     
+        })
+        input.value = "";
+        })
+       
+        // li.textContent=input;
+        //       ul.appendChild(li);
+        //     const add_span=document.createElement("span");
+        //     add_span.textContent=input;
+        //     const del_buton=document.createElement("button")
+        //     del_buton.id="Li_delete";
+        //     del_buton.textContent="X"
+    </script>
+</body>
+
+</html>

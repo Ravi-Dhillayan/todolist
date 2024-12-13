@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unordered List</title>
+</head>
+<body>
+    <div>
+        <div id="ul"></div>
+        <button id="button">Click</button>
+    </div>
+    <script>
+        document.getElementById("button").addEventListener('click', function() {
+            let ulDiv = document.getElementById("ul");
+            ulDiv.innerHTML = "";
+            let ul = document.createElement("ul");
+            for (let i = 1; i <6; i++) {
+                let li = document.createElement("li");
+                li.textContent = ` ${i}`;
+                ul.appendChild(li);
+            }
+                ulDiv.appendChild(ul)
+            } );
+    </script>
+    <!-- <div id="outerDiv" style="width: 400px; height: 200px; border: 2px solid red;">
+        <button id="innerButton">Click me</button>
+    </div>
+  
+    <script>
+        let outerDiv = document.getElementById("outerDiv");
+        let innerButton = document.getElementById("innerButton");
+    
+        // Event listener for the button
+        innerButton.addEventListener("click", function (event) {
+             event.stopPropagation();
+             let outerDiv = document.getElementById("outerDiv");
+             let str= "Button clicked!";
+             outerDiv.innerHTML(str)
+        });
+        outerDiv.addEventListener("click", function (event) {
+            alert("Outer div clicked!");
+        }); -->
+    
+      
+    </script>
+    
+    
+</body>
+</html>

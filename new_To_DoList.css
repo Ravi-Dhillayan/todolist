@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.TodoContainer {
+    width: 90%;
+    max-width: 500px;
+    background: url('back_ground_img.jpg') no-repeat center center / cover;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#Todo {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#Idinput {
+    width: 70%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#submit {
+    width: 25%;
+    height: 40px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #218838;
+}
+
+ul {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    
+}
+
+li {
+    position: relative;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+ul li span {
+    position: absolute;
+    color: #dc3545;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 400px;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 19px;
+    width: 20px;
+    background: url('uncheck.jpg') no-repeat center center / cover;
+    left: -20px;
+}
+
+ul li.checked::before {
+    background: url('check.jpg') no-repeat center center / cover;
+}
+
+@media (max-width: 768px) {
+    .TodoContainer {
+        width: 95%;
+        padding: 15px;
+       
+    }
+
+    #Idinput {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    #submit {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 19px;
+        padding: 10px;
+
+       
+    }
+
+    ul li span {
+        font-size: 16px;
+        margin-left: 80%;
+    }
+}
